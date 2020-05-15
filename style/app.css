@@ -1,0 +1,284 @@
+/**
+	Color manipulation
+ */
+/**
+	Color map lookup
+ */
+/**
+	Breakpoint, font, reset map lookup
+ */
+/**
+	Color maps
+ */
+/**
+	Text color map
+ */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;900&display=swap");
+/**
+	Sans-serif fonts
+ */
+/* variable */
+/**
+	Serif fonts
+ */
+/* variable */
+/**
+	Monospace fonts
+ */
+/**
+	Font maps
+ */
+* {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:focus {
+  outline: none;
+}
+
+html {
+  background: #f8f9fa;
+  color: rgba(43, 55, 66, 0.75);
+  font: 400 10px/1.5 "Source Sans Pro", "Helvetica Neue", "Segoe UI", sans-serif;
+  /* 10px = 1rem */
+  min-height: 100%;
+}
+
+body {
+  background: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  font: inherit;
+  font-size: 1.2rem;
+  min-height: 100vh;
+}
+
+header#header,
+main#main,
+footer#footer {
+  flex-shrink: 0;
+}
+
+main#main,
+footer#footer {
+  position: relative;
+}
+
+main#main {
+  flex-grow: 1;
+}
+
+a, .link,
+button, .button,
+input,
+select,
+textarea {
+  display: inline-block;
+  font: inherit;
+  line-height: inherit;
+}
+
+a, .link,
+button, .button {
+  cursor: pointer;
+}
+
+a, a:hover, a.hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  color: #b52c89;
+  text-decoration: none;
+}
+.link:hover, .link.hover {
+  color: #90236d;
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+}
+
+nav a, nav li, nav ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  padding: 0.5rem 2rem;
+}
+nav ul {
+  list-style: none;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+ol, ul {
+  margin: 1rem 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+#main {
+  background: #ffffff;
+  color: rgba(43, 55, 66, 0.75);
+  padding: 2rem;
+}
+#main .title, #main .subtitle {
+  color: #b52c89;
+}
+#main.background-architecture {
+  background-image: linear-gradient(to bottom, rgba(181, 44, 137, 0.5), rgba(49, 165, 193, 0.5)), url("../image/background/architecture.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#side-nav + #main {
+  padding: 2rem 2rem 2rem 4rem;
+}
+@media (min-width: 768px) {
+  #side-nav + #main {
+    padding: 2rem 2rem 2rem 18rem;
+  }
+}
+
+.nav-side {
+  /* navigation */
+  /* navigation toggle (visible only when browser width < 768px) */
+  position: fixed;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -16rem;
+  z-index: 200;
+  width: 16rem;
+  height: 100vh;
+  background: #2b3742;
+  box-shadow: 0 0 0.5rem 0.25rem rgba(43, 55, 66, 0.5);
+  color: #ffffff;
+  display: flex;
+  padding: 2rem 2rem 2rem 4rem;
+  transition: left 0.5s;
+  /* center navigation links vertically */
+  /* navigation toggle */
+  /* active (visible) navigation */
+}
+.nav-side a {
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-side a:hover, .nav-side a.hover {
+  color: #e8e8e8;
+  text-decoration: none;
+}
+.nav-side li {
+  display: block;
+  margin: 0 -2rem;
+}
+.nav-side li.active a, .nav-side li.active a:hover, .nav-side li.active a.hover {
+  color: inherit;
+  font-weight: 600;
+  border-left: solid 4px #31a5c1;
+  padding-left: 1.6rem;
+}
+.nav-side ul {
+  margin: auto 0;
+}
+@media (min-width: 768px) {
+  .nav-side, .nav-side.active {
+    left: 0;
+    padding: 2rem;
+    width: 14rem;
+  }
+}
+.nav-side .nav-toggle {
+  position: fixed;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  z-index: 201;
+  width: 2rem;
+  height: 100vh;
+  background: #b52c89;
+  box-shadow: 0 0 0.5rem 0.25rem rgba(43, 55, 66, 0.5);
+  display: flex;
+  padding: 0;
+  /* navigation toggle arrow */
+  /* hide navigation toggle when browser width >= 768px */
+}
+.nav-side .nav-toggle::after {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transform-origin: 60% 80%;
+  -ms-transform: rotate(-45deg);
+  -ms-transform-origin: 60% 80%;
+  transform: rotate(-45deg);
+  transform-origin: 60% 80%;
+  width: 0.3rem;
+  height: 0.3rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: inline-block;
+  margin: auto;
+  padding: 2px;
+  transition: transform 0.5s, transform-origin 0.5s;
+}
+.nav-side .nav-toggle::after:hover, .nav-side .nav-toggle::after.hover {
+  border-color: #e8e8e8;
+}
+.nav-side .nav-toggle:hover, .nav-side .nav-toggle.hover {
+  background: #90236d;
+}
+@media (min-width: 768px) {
+  .nav-side .nav-toggle {
+    display: none;
+  }
+}
+.nav-side.active {
+  left: 0;
+}
+.nav-side.active .nav-toggle::after {
+  -webkit-transform: rotate(135deg);
+  -webkit-transform-origin: 60% 50%;
+  -ms-transform: rotate(135deg);
+  -ms-transform-origin: 60% 50%;
+  transform: rotate(135deg);
+  transform-origin: 60% 50%;
+}
+
+/*# sourceMappingURL=app.css.map */

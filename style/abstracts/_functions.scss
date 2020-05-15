@@ -1,0 +1,50 @@
+/**
+	Color manipulation
+ */
+@function color-level-up($color: color(neutral), $color-interval: 9%) {
+	@return darken($color, $color-interval);
+}
+
+@function color-level($color: color(neutral), $level: 500, $color-interval: 9%) {
+	@if ($level < 500) {
+		$-color-percentage: $color-interval*((500 - $level)/100);
+		@return lighten($color, $-color-percentage);
+	}
+	@else if ($level > 500) {
+		$-color-percentage: $color-interval*(($level - 500)/100);
+		@return darken($color, $-color-percentage);
+	}
+	@else { @return $color; }
+}
+
+@function contrast-color($color, $dark: color(black), $light: color(white)) {
+	@if (lightness($color) > 75) { @return $dark; }
+	@else { @return $light; }
+}
+
+@function contrast-text-color($color) {
+	@return contrast-color($color, color(text-dark), color(text-light));
+}
+
+
+/**
+	Color map lookup
+ */
+@function color($key) {
+	@if map-has-key($colors, $key) { @return map-get($colors, $key); }
+	@else { @error 'Undefined color `#{$key}`'; }
+}
+
+@function neutral($key) { @return color-level(color(neutral), $key); }
+@function primary($key) { @return color-level(color(primary), $key); }
+
+
+/**
+	Breakpoint, font, reset map lookup
+ */
+@function breakpoint($key) { @return map-get($breakpoints, $key); }
+
+@function font-family($key) { @return map-get($font-families, $key); }
+@function font-size($key) { @return map-get($font-sizes, $key); }
+
+@function reset($attribute) { @return map-get($reset, $attribute); }

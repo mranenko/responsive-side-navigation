@@ -1,0 +1,110 @@
+.nav-side {
+	/* navigation */
+	$-background: color(black);
+	$-box-shadow: 0 0 .5rem .25rem rgba(color(black), .5);
+	$-padding: 2rem;
+	$-width: 14rem;
+	$-z-index: 200;
+
+	/* navigation toggle (visible only when browser width < 768px) */
+	$-toggle-background: color(primary);
+	$-toggle-box-shadow: $-box-shadow;
+	$-toggle-width: 2rem;
+	$-toggle-z-index: $-z-index + 1;
+
+	@include position(fixed, 0, auto, auto, -($-width + $-toggle-width), $-z-index);
+	@include size($-width + $-toggle-width, 100vh);
+	background: $-background;
+	box-shadow: $-box-shadow;
+	color: contrast-color($-background);
+	display: flex;
+	padding: $-padding $-padding $-padding ($-padding + $-toggle-width);
+	transition: left .5s;
+
+	a {
+		color: inherit;
+		cursor: pointer;
+		padding: .5rem 2rem;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover, &.hover {
+			color: color-level-up(contrast-color($-background));
+			text-decoration: none;
+		}
+	}
+
+	li {
+		display: block;
+		margin: 0 -2rem;
+
+		&.active a {
+			&, &:hover, &.hover {
+				color: inherit;
+				font-weight: 600;
+				border-left: solid 4px color(accent);
+				padding-left: 1.6rem;
+			}
+		}
+	}
+
+	/* center navigation links vertically */
+	ul { margin: auto 0; }
+
+	@include respond-to(medium) {
+		&, &.active {
+			left: 0;
+			padding: $-padding;
+			width: $-width;
+		}
+	}
+
+
+	/* navigation toggle */
+	.nav-toggle {
+		@include position(fixed, 0, auto, auto, 0, $-toggle-z-index);
+		@include size($-toggle-width, 100vh);
+		background: $-toggle-background;
+		box-shadow: $-toggle-box-shadow;
+		display: flex;
+		padding: 0;
+
+		/* navigation toggle arrow */
+		&::after {
+			@include rotate(-45deg, 60% 80%);
+			@include size(.3rem);
+			border: solid contrast-color($-toggle-background);
+			border-width: 0 2px 2px 0;
+			content: '';
+			display: inline-block;
+			margin: auto;
+			padding: 2px;
+			transition: transform .5s, transform-origin .5s;
+
+			&:hover, &.hover {
+				border-color: color-level-up(contrast-color($-toggle-background));
+			}
+		}
+
+		&:hover, &.hover {
+			background: color-level-up($-toggle-background);
+		}
+
+		/* hide navigation toggle when browser width >= 768px */
+		@include respond-to(medium) {
+			display: none;
+		}
+	}
+
+
+	/* active (visible) navigation */
+	&.active {
+		left: 0;
+
+		.nav-toggle {
+			&::after {
+				@include rotate(135deg, 60% 50%);
+			}
+		}
+	}
+}

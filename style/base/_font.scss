@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;900&display=swap');
+
+
+/**
+	Sans-serif fonts
+ */
+$-sans-serif: 'Helvetica Neue', 'Segoe UI', sans-serif;
+$-jost-font-family: 'Jost', $-sans-serif;
+$-lato-font-family: 'Lato', $-sans-serif;
+$-montserrat-font-family: 'Montserrat', $-sans-serif;
+$-noto-sans-jp-font-family: 'Noto Sans JP', $-sans-serif;
+$-open-sans-font-family: 'Open Sans', $-sans-serif;
+$-nunito-font-family: 'Nunito', $-sans-serif;
+$-pt-sans-font-family: 'PT Sans', $-sans-serif;
+$-raleway-font-family: 'Raleway', $-sans-serif;
+$-roboto-font-family: 'Roboto', $-sans-serif;
+$-roboto-condensed-font-family: 'Roboto Condensed', $-sans-serif;
+$-source-sans-pro-font-family: 'Source Sans Pro', $-sans-serif;
+/* variable */
+$-oswald-font-family: 'Oswald', $-sans-serif;
+$-work-sans-font-family: 'Work Sans', $-sans-serif;
+
+
+/**
+	Serif fonts
+ */
+$-serif: Times, 'Times New Roman', serif;
+$-lora-font-family: 'Lora', $-serif;
+$-slabo-font-family: 'Slabo', $-serif;
+$-source-serif-pro-font-family: 'Source Serif Pro', $-serif;
+/* variable */
+$-roboto-slab-font-family: 'Roboto Slab', $-serif;
+
+
+/**
+	Monospace fonts
+ */
+$-monospace: Courier, 'Courier New', serif;
+$-pt-mono-font-family: 'PT Mono', $-monospace;
+$-roboto-mono-font-family: 'Roboto Mono', $-monospace;
+$-source-code-pro-font-family: 'Source Code Pro', $-monospace;
+
+
+/**
+	Font maps
+ */
+$font-families: (
+	code: $-pt-mono-font-family,
+	heading: $-jost-font-family,
+	text: $-source-sans-pro-font-family,
+);
+
+$font-sizes: (
+	heading1: 4rem,
+	heading2: 3.5rem,
+	heading3: 3rem,
+	heading4: 2.4rem,
+	heading5: 1.8rem,
+	heading6: 1.5rem,
+
+	text: 1.2rem,
+	text-large: 1.4rem,
+	text-small: 1rem,
+);

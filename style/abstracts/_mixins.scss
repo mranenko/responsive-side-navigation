@@ -1,0 +1,39 @@
+@mixin position($position: absolute, $top: auto, $right: auto, $bottom: auto, $left: auto, $z-index: auto) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	z-index: $z-index;
+}
+
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@error 'Undefined breakpoint `#{$breakpoint}`';
+	}
+}
+
+@mixin rotate($angle, $origin: 50% 50%) {
+	-webkit-transform: rotate($angle);
+	-webkit-transform-origin: $origin;
+	-ms-transform: rotate($angle);
+	-ms-transform-origin: $origin;
+	transform: rotate($angle);
+	transform-origin: $origin;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin text-size-adjust {
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
