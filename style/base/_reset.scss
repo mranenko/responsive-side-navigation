@@ -29,16 +29,16 @@ body {
 	min-height: 100vh;
 }
 
-header#header,
-main#main,
-footer#footer {
+#header,
+#main,
+#footer {
 	flex-shrink: 0;
 }
-main#main,
-footer#footer {
+#main,
+#footer {
 	position: relative;
 }
-main#main { flex-grow: 1; }
+#main { flex-grow: 1; }
 
 a, .link,
 button, .button,

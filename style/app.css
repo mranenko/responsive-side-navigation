@@ -77,18 +77,18 @@ body {
   min-height: 100vh;
 }
 
-header#header,
-main#main,
-footer#footer {
+#header,
+#main,
+#footer {
   flex-shrink: 0;
 }
 
-main#main,
-footer#footer {
+#main,
+#footer {
   position: relative;
 }
 
-main#main {
+#main {
   flex-grow: 1;
 }
 
@@ -154,23 +154,11 @@ li {
   color: rgba(43, 55, 66, 0.75);
   padding: 2rem;
 }
-#main .title, #main .subtitle {
-  color: #b52c89;
-}
 #main.background-architecture {
   background-image: linear-gradient(to bottom, rgba(181, 44, 137, 0.5), rgba(49, 165, 193, 0.5)), url("../image/background/architecture.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#side-nav + #main {
-  padding: 2rem 2rem 2rem 4rem;
-}
-@media (min-width: 768px) {
-  #side-nav + #main {
-    padding: 2rem 2rem 2rem 18rem;
-  }
 }
 
 .nav-side {
@@ -194,29 +182,26 @@ li {
   /* navigation toggle */
   /* active (visible) navigation */
 }
-.nav-side a {
+.nav-side a, .nav-side a:hover, .nav-side a.hover {
   color: inherit;
   cursor: pointer;
+  display: block;
   padding: 0.5rem 2rem;
   text-decoration: none;
   text-transform: uppercase;
-}
-.nav-side a:hover, .nav-side a.hover {
-  color: #e8e8e8;
-  text-decoration: none;
 }
 .nav-side li {
   display: block;
   margin: 0 -2rem;
 }
-.nav-side li.active a, .nav-side li.active a:hover, .nav-side li.active a.hover {
-  color: inherit;
-  font-weight: 600;
-  border-left: solid 4px #31a5c1;
-  padding-left: 1.6rem;
+.nav-side li:hover, .nav-side li.hover {
+  background: #28869c;
+  color: #ffffff;
 }
 .nav-side ul {
+  display: block;
   margin: auto 0;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .nav-side, .nav-side.active {
@@ -225,7 +210,7 @@ li {
     width: 14rem;
   }
 }
-.nav-side .nav-toggle {
+.nav-side .nav-toggle, .nav-side .nav-toggle:hover, .nav-side .nav-toggle.hover {
   position: fixed;
   top: 0;
   right: auto;
@@ -241,7 +226,7 @@ li {
   /* navigation toggle arrow */
   /* hide navigation toggle when browser width >= 768px */
 }
-.nav-side .nav-toggle::after {
+.nav-side .nav-toggle::after, .nav-side .nav-toggle:hover::after, .nav-side .nav-toggle.hover::after {
   -webkit-transform: rotate(-45deg);
   -webkit-transform-origin: 60% 80%;
   -ms-transform: rotate(-45deg);
@@ -258,16 +243,19 @@ li {
   padding: 2px;
   transition: transform 0.5s, transform-origin 0.5s;
 }
-.nav-side .nav-toggle::after:hover, .nav-side .nav-toggle::after.hover {
+.nav-side .nav-toggle::after:hover, .nav-side .nav-toggle::after.hover, .nav-side .nav-toggle:hover::after:hover, .nav-side .nav-toggle:hover::after.hover, .nav-side .nav-toggle.hover::after:hover, .nav-side .nav-toggle.hover::after.hover {
   border-color: #e8e8e8;
+}
+@media (min-width: 768px) {
+  .nav-side .nav-toggle, .nav-side .nav-toggle:hover, .nav-side .nav-toggle.hover {
+    display: none;
+  }
 }
 .nav-side .nav-toggle:hover, .nav-side .nav-toggle.hover {
   background: #90236d;
 }
-@media (min-width: 768px) {
-  .nav-side .nav-toggle {
-    display: none;
-  }
+.nav-side .nav-toggle:hover::after, .nav-side .nav-toggle.hover::after {
+  border-color: #ffffff;
 }
 .nav-side.active {
   left: 0;

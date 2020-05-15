@@ -1,7 +1,7 @@
 (function() {
-	let styleguideNav = {
-		nav: document.querySelector('.nav'),
-		navToggle: document.querySelector('.nav .nav-toggle'),
+	let nav = {
+		nav: document.querySelector('#nav'),
+		navToggle: document.querySelector('#nav .nav-toggle'),
 
 		initialize() {
 			this.navToggle.addEventListener('click', () => this.navToggleClick());
@@ -12,5 +12,5 @@
 		},
 	};
 
-	styleguideNav.initialize();
+	nav.initialize();
 })();
